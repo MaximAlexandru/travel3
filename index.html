@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html>
+	<title>&nbsp;</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+		
+		<script type="text/javascript" charset="utf-8" src="js/global_includes.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/functions.js"></script>
+	
+		<script src="http://malsup.github.io/jquery.blockUI.js"></script>
+		
+		
+		<style type="text/css">
+		#demo-page * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+/* Content styling. */
+dl { font-family: "Times New Roman", Times, serif; padding: 1em; }
+dt { font-size: 2em; font-weight: bold; }
+dt span { font-size: .5em; color: #777; margin-left: .5em; }
+dd { font-size: 1.25em; margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+.back-btn { float: right; margin: 0 2em 1em 0; }
+			#wrap-header{
+				background:#32394B;
+				padding-left:15px;
+				padding-right:30px;
+			}
+		    nav{
+		    	display:none;
+		    }
+			nav ul li {
+				border-bottom: 1px solid black;
+				
+				padding:20px;
+				list-style:none;
+			}
+			nav ul li  a{
+				text-transform: none;
+				text-decoration: none;
+				color:#fff;
+				
+			}
+			
+			.col50{
+				width: 50%;
+				
+				display:inline-block
+			}
+			.col100{
+				width: 100%;
+				
+				display: inline-block;
+			}
+			.fl{
+				float:left;
+			}
+			.fr{
+				float:right;
+			}
+			.cb{
+				clear:both;
+			}
+			.menu-btn{
+				background: #000000;
+				border-radius: 10px;
+				border:none;
+				text-align: center;
+				width: auto;
+				padding: 10px;
+				float: left;
+				cursor: pointer;
+			}
+			.nav-icon{
+				width:100%;
+		
+				height: auto;
+				float:left;
+				background:#ccc;
+			}
+			.nav-wrapper{
+				width:300px;
+				margin:auto;
+			}
+			.navbar-icon{
+				float:left;
+			}
+			.nav-text{
+				float:left;
+				display: inline-block;
+			
+			}
+			.nav-text h1{
+				margin:0px;
+			}
+			#list_view{
+				background:rgba(0,0,0,0.1);
+				padding-left: 15px;
+				padding-right: 15px;
+				margin:0px;
+				display:none;
+			}
+			ul#list_view li{
+				border-bottom:rgba(0,0,0,0.2)
+				text-align: left;
+				
+				padding-top: 4px;
+				border-bottom: 1px solid #666262;
+			}
+			a{
+				text-decoration: none;
+				color:#ccc;			}
+				#list_view li a h3{
+					text-align:left;
+					margin-bottom:10px;
+					color: #666262;
+					line-height: 1em;
+					margin:0px;
+				}
+				#list_view li a p{
+					text-align:left;
+					color: #666262;
+					line-height: 1em;
+					margin:0px;
+				}
+				#content{
+					padding:0px;
+				}
+				.button{
+					background:#000000;
+					padding:15px;
+					border-radius:10px;
+				}
+				.location-img{
+					width:35%;
+					height:100px;
+					background-size:cover;
+					float:left;
+					display:inline-block;
+					
+				}
+				.location_details{
+					padding-left: 10px;
+					width: 60%;
+					display: inline-block;
+					
+					
+				}
+				a.recomandare{
+					clear:both;
+					margin-top:10px;
+				}
+			
+			
+		</style>
+	</head>
+	<body>
+	
+		
+		<!-- Start of first page I -->
+		<div data-role="page" id="acasa" data-theme="c">
+			<!-- Header -->
+			<div data-role="header" id="wrap-header">
+			
+				   <img src="img/logo.png" class="logo"/>
+				   <a href="#" class="ui-btn-right button" id="btn-menu">Menu</a>
+				   
+			 </div>
+			 			
+			 
+			<!-- /header -->
+			<!-- Content    -->
+			<div data-role="content" id="content">
+				<div data-url="demo-page" data-role="page" id="demo-page">
+    <div data-role="header" data-theme="b">
+        <h1>Swipe left or right</h1>
+        <a href="#left-panel" data-icon="carat-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+        <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open right panel</a>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+        <dl>
+            <dt>Swipe <span>verb</span></dt>
+            <dd><b>1.</b> to strike or move with a sweeping motion</dd>
+        </dl>
+        <a href="#demo-intro" data-rel="back" class="back-btn ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-back ui-btn-icon-right">Back to demo intro</a>
+    </div><!-- /content -->
+    <div data-role="panel" id="left-panel" data-theme="b">
+        <p>Left reveal panel.</p>
+        <a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-right">Close</a>
+    </div><!-- /panel -->
+    <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="b">
+        <p>Right push panel.</p>
+        <a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-right">Close</a>
+    </div><!-- /panel -->
+</div>
+	
+				<ul data-role="listview" data-inset="true" data-theme="e" id="list_view"></ul>
+				<h3>Content</h3>
+				<p>
+					dad
+				</p>
+			</div>
+			<!-- /content -->
+			
+			
+			<!-- footer -->
+			<div data-role="footer">
+				<h4>&copy; 2013 Your Name</h4>
+			</div>
+			<!-- /footer -->
+		</div>
+		<!-- /page -->
+
+
+	<div data-role="page" id="categorie">
+			<!-- Header -->
+			<div data-role="header" id="wrap-header">
+			 <img src="img/logo.png" class="logo"/>
+				   <a href="#" class="ui-btn-right button" id="btn-menu">Menu</a>
+				   
+			</div>
+			<!-- /header -->
+			<!-- Content    -->
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-theme="e" id="list_view"></ul>
+				<h3 class="category-name"></h3>
+				<h4 class="category-tagline"></h4>
+				<p class="category-description"></p>
+				
+				<h3>Va recomandam</h3>
+				<div class="category-locations"></div>
+				
+			
+				
+			</div>
+			<!-- /content -->
+			<!-- footer -->
+			<div data-role="footer">
+				<h4>&copy; 2013 Your Name</h4>
+			</div>
+			<!-- /footer -->
+		</div>
+		
+			<!-- Start of first page I -->
+		<div data-role="page" id="location"  data-theme="c">
+			<!-- Header -->
+			<div data-role="header" id="wrap-header">
+			
+				   <img src="img/logo.png" class="logo"/>
+				   <a href="#" class="ui-btn-right button" id="btn-menu">Menu</a>
+			 </div>
+			<!-- /header -->
+			<!-- Content    -->
+			<div data-role="content" id="content" class="location-content">
+				
+			</div>
+			<!-- /content -->
+			<!-- footer -->
+			<div data-role="footer">
+				<h4>&copy; 2013 Your Name</h4>
+			</div>
+			<!-- /footer -->
+		</div>
+		<!-- /page -->
+<div data-role="page" id="cont"  data-theme="c">
+			<!-- Header -->
+			<div data-role="header" id="wrap-header">
+			
+				   <img src="img/logo.png" class="logo"/>
+				   <a href="#" class="ui-btn-right button" id="btn-menu">Menu</a>
+			 </div>
+			<!-- /header -->
+			<!-- Content    -->
+			<div data-role="content" id="content" class="location-content">
+				Aceasta este pagina de cont!
+			</div>
+			<!-- /content -->
+			<!-- footer -->
+			<div data-role="footer">
+				<h4>&copy; 2013 Your Name</h4>
+			</div>
+			<!-- /footer -->
+		</div>
+
+
+
+<script type="text/javascript">
+   init(); 
+   $( document ).on( "pagecreate", "#demo-page", function() {
+    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
+    	alert('swipe');
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft" ) {
+                $( "#right-panel" ).panel( "open" );
+            } else if ( e.type === "swiperight" ) {
+                $( "#left-panel" ).panel( "open" );
+            }
+        }
+    });
+});
+   	$('#btn-menu').on('click',function(){
+  		$('#list_view').toggle();
+  	});
+	
+</script>
+</body>
+</html>
+
